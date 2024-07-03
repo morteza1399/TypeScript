@@ -1,10 +1,20 @@
+// nullables type
+function greet(name: string | null | undefined) {
+  if (name)
+    console.log(name.toUpperCase());
+  else 
+    console.log("Hola !");
+    
+}
+
+greet(undefined);
+
 // literal type
+// type Quantity = 50 | 100;
+// let quantity: Quantity = 100;
 
-type Quantity = 50 | 100;
-let quantity: Quantity = 100;
-
-type Metric = "cm" | "inch";
-let metricUnit: Metric = "inch"
+// type Metric = "cm" | "inch";
+// let metricUnit: Metric = "inch"
 
 // intersection type
 // type Draggable = {
