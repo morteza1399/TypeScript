@@ -1,18 +1,26 @@
+// literal type
+
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = "cm" | "inch";
+let metricUnit: Metric = "inch"
+
 // intersection type
-type Draggable = {
-  drag: () => void;
-};
+// type Draggable = {
+//   drag: () => void;
+// };
 
-type Resizable = {
-  resize: () => void;
-};
+// type Resizable = {
+//   resize: () => void;
+// };
 
-type UIWidget = Draggable & Resizable;
+// type UIWidget = Draggable & Resizable;
 
-let textBox: UIWidget = {
-  drag: () => {},
-  resize: () => {},
-};
+// let textBox: UIWidget = {
+//   drag: () => {},
+//   resize: () => {},
+// };
 
 // union type => A union type is a type formed from two or more other types, representing values that may be any one of those types.
 // function kgToLbs(weight: number | string): number {
