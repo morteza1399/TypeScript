@@ -1,9 +1,13 @@
 // Exercises
 
-let user = getUser();
-console.log(user?.address?.street);
+let value: unknown = 'a';
+if (typeof value === 'string')
+  console.log(value.toUpperCase());
 
-let x = foo ?? bar();
+// let user = getUser();
+// console.log(user?.address?.street);
+
+// let x = foo ?? bar();
 
 // type DayOfWeek =
 //   | "Monday"

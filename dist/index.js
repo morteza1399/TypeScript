@@ -1,10 +1,5 @@
 "use strict";
-function reject(message) {
-    throw new Error(message);
-}
-function processEvent() {
-    while (true) {
-    }
-}
-console.log("Hello World");
+let value = 'a';
+if (typeof value === 'string')
+    console.log(value.toUpperCase());
 //# sourceMappingURL=index.js.map
