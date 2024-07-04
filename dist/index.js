@@ -1,5 +1,14 @@
 "use strict";
-let value = 'a';
-if (typeof value === 'string')
-    console.log(value.toUpperCase());
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    despoit(amount) {
+        if (amount <= 0)
+            throw new Error("Invalid amount");
+        this.balance += amount;
+    }
+}
 //# sourceMappingURL=index.js.map

@@ -1,8 +1,25 @@
-// Exercises
+// creating classes
+class Account {
+  id: number;
+  owner: string;
+  balance: number;
 
-let value: unknown = 'a';
-if (typeof value === 'string')
-  console.log(value.toUpperCase());
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id;
+    this.owner = owner;
+    this.balance = balance;
+  }
+
+  despoit(amount: number): void {
+    if (amount <= 0) throw new Error("Invalid amount");
+    this.balance += amount;
+  }
+}
+
+// Exercises
+// let value: unknown = 'a';
+// if (typeof value === 'string')
+//   console.log(value.toUpperCase());
 
 // let user = getUser();
 // console.log(user?.address?.street);
