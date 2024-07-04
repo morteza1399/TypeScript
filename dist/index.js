@@ -1,11 +1,10 @@
 "use strict";
-function render(value) {
-    if (typeof value === "string") {
-        console.log(value.toUpperCase());
-    }
-    else if (typeof value === "number") {
-        console.log(value.toFixed(2));
+function reject(message) {
+    throw new Error(message);
+}
+function processEvent() {
+    while (true) {
     }
 }
-render("mOrteza");
+console.log("Hello World");
 //# sourceMappingURL=index.js.map

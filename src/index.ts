@@ -1,13 +1,28 @@
-// unknown type
-function render(value: unknown) {
-  if (typeof value === "string") {
-    console.log(value.toUpperCase());
-  } else if (typeof value === "number") {
-    console.log(value.toFixed(2));
+// never type
+function reject(message: string): never {
+  throw new Error(message);
+}
+
+function processEvent(): never {
+  while (true) {
+    // Read a message from a queue
   }
 }
 
-render("mOrteza");
+processEvent();
+reject("...");
+console.log("Hello World");
+
+// unknown type
+// function render(value: unknown) {
+//   if (typeof value === "string") {
+//     console.log(value.toUpperCase());
+//   } else if (typeof value === "number") {
+//     console.log(value.toFixed(2));
+//   }
+// }
+
+// render("mOrteza");
 
 // assertion type
 // let button = document.getElementById("button") as HTMLButtonElement;
