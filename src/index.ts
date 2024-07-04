@@ -1,37 +1,46 @@
 // Exercises
 
-type Brid = {
-  fly: () => void;
-};
+type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
 
-type Fish = {
-  swim: () => void;
-};
+// type Brid = {
+//   fly: () => void;
+// };
 
-type Pet = Brid | Fish;
+// type Fish = {
+//   swim: () => void;
+// };
 
-let behavoirPet: Pet = {
-  fly: () => {},
-  swim: () => {},
-};
+// type Pet = Brid | Fish;
 
-type User = {
-  name: string;
-  age: number;
-  occupation?: string;
-};
+// let behavoirPet: Pet = {
+//   fly: () => {},
+//   swim: () => {},
+// };
 
-let users: User[] = [
-  {
-    name: "John Smith",
-    age: 30,
-    occupation: "Software engineer",
-  },
-  {
-    name: "Kate Müller",
-    age: 28,
-  },
-];
+// type User = {
+//   name: string;
+//   age: number;
+//   occupation?: string;
+// };
+
+// let users: User[] = [
+//   {
+//     name: "John Smith",
+//     age: 30,
+//     occupation: "Software engineer",
+//   },
+//   {
+//     name: "Kate Müller",
+//     age: 28,
+//   },
+// ];
 
 // never type
 // function reject(message: string): never {
