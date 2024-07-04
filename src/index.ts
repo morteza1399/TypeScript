@@ -1,13 +1,25 @@
-// nullables type
-function greet(name: string | null | undefined) {
-  if (name)
-    console.log(name.toUpperCase());
-  else 
-    console.log("Hola !");
-    
+// optional chaining
+type Customer = {
+  birthday?: Date;
+};
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() };
 }
 
-greet(undefined);
+let customer = getCustomer(1);
+
+console.log(customer?.birthday?.getFullYear());
+
+// nullables type
+// type Greet = string | null | undefined;
+
+// function greet(name: Greet) {
+//   if (name) console.log(name.toUpperCase());
+//   else console.log("Hola !");
+// }
+
+// greet(undefined);
 
 // literal type
 // type Quantity = 50 | 100;
