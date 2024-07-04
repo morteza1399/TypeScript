@@ -1,17 +1,52 @@
+// Exercises
+
+type Brid = {
+  fly: () => void;
+};
+
+type Fish = {
+  swim: () => void;
+};
+
+type Pet = Brid | Fish;
+
+let behavoirPet: Pet = {
+  fly: () => {},
+  swim: () => {},
+};
+
+type User = {
+  name: string;
+  age: number;
+  occupation?: string;
+};
+
+let users: User[] = [
+  {
+    name: "John Smith",
+    age: 30,
+    occupation: "Software engineer",
+  },
+  {
+    name: "Kate Müller",
+    age: 28,
+  },
+];
+
 // never type
-function reject(message: string): never {
-  throw new Error(message);
-}
+// function reject(message: string): never {
+//   throw new Error(message);
+// }
 
-function processEvent(): never {
-  while (true) {
-    // Read a message from a queue
-  }
-}
+// function processEvent(): never {
+//   while (true) {
+//     // Read a message from a queue
+//   }
+// }
 
-processEvent();
-reject("...");
-console.log("Hello World");
+// processEvent();
+// reject("...");
+// console.log("Hello World");
 
 // unknown type
 // function render(value: unknown) {
