@@ -1,13 +1,18 @@
 // Exercises
 
-type DayOfWeek =
-  | "Monday"
-  | "Tuesday"
-  | "Wednesday"
-  | "Thursday"
-  | "Friday"
-  | "Saturday"
-  | "Sunday";
+let user = getUser();
+console.log(user?.address?.street);
+
+let x = foo ?? bar();
+
+// type DayOfWeek =
+//   | "Monday"
+//   | "Tuesday"
+//   | "Wednesday"
+//   | "Thursday"
+//   | "Friday"
+//   | "Saturday"
+//   | "Sunday";
 
 // type Brid = {
 //   fly: () => void;
