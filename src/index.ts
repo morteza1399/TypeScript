@@ -1,10 +1,28 @@
-// nulish coaelscing operator
-let speed: number | null | undefined = undefined;
-let ride = {
-  speed: speed ?? 40,
-};
+// unknown type
+function render(value: unknown) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());
+  } else if (typeof value === "number") {
+    console.log(value.toFixed(2));
+  }
+}
 
-console.log(ride);
+render("mOrteza");
+
+// assertion type
+// let button = document.getElementById("button") as HTMLButtonElement;
+// button;
+
+// let phone = <HTMLInputElement>document.getElementById("phone");
+// phone;
+
+// nulish coaelscing operator
+// let speed: number | null | undefined = undefined;
+// let ride = {
+//   speed: speed ?? 40,
+// };
+
+// console.log(ride);
 
 // optional chaining
 // type Customer = {
