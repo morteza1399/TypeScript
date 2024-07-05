@@ -2,25 +2,34 @@
 class Account {
   readonly id: number;
   owner: string;
-  balance: number;
+  private _balance: number;
   nickname?: string;
 
   constructor(id: number, owner: string, balance: number) {
     this.id = id;
     this.owner = owner;
-    this.balance = balance;
+    this._balance = balance;
   }
 
   despoit(amount: number): void {
     if (amount <= 0) throw new Error("Invalid amount");
-    this.balance += amount;
+    this._balance += amount;
+  }
+
+  getBalance(): number {
+    return this._balance;
+  }
+
+  calculateTax() {
+    return "calculate tax";
   }
 }
 
 // creating objects
 let account = new Account(1, "Morteza", 0);
 account.despoit(100);
-console.log(account);
+console.log(account.getBalance());
+console.log(account.calculateTax());
 
 // Exercises
 // let value: unknown = 'a';
