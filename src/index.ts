@@ -1,34 +1,47 @@
-// creating classes
-class Account {
-  nickname?: string;
+// index signatures
+class SeatAssignment {
+  // A1, A2, ...
+  // Morteza, Ali, ...
 
-  constructor(
-    public readonly id: number,
-    public owner: string,
-    private _balance: number
-  ) {}
-
-  despoit(amount: number): void {
-    if (amount <= 0) throw new Error("Invalid amount");
-    this._balance += amount;
-  }
-
-  // getters and setters
-  get balance(): number {
-    return this._balance;
-  }
-
-  set balance(value: number) {
-    if (value < 0) throw new Error("Invalid value");
-    this._balance = value;
-  }
+  [seatNumber: string]: string;
 }
 
+let seats = new SeatAssignment();
+seats.A1 = "Morteza";
+seats.A2 = "Ali";
+console.log(seats);
+
+// creating classes
+// class Account {
+//   nickname?: string;
+
+//   constructor(
+//     public readonly id: number,
+//     public owner: string,
+//     private _balance: number
+//   ) {}
+
+//   despoit(amount: number): void {
+//     if (amount <= 0) throw new Error("Invalid amount");
+//     this._balance += amount;
+//   }
+
+//   // getters and setters
+//   get balance(): number {
+//     return this._balance;
+//   }
+
+//   set balance(value: number) {
+//     if (value < 0) throw new Error("Invalid value");
+//     this._balance = value;
+//   }
+// }
+
 // creating objects
-let account = new Account(1, "Morteza", 0);
-account.despoit(100);
-account.balance = 1;
-console.log(account.balance);
+// let account = new Account(1, "Morteza", 0);
+// account.despoit(100);
+// account.balance = 1;
+// console.log(account.balance);
 
 // Exercises
 // let value: unknown = 'a';
