@@ -1,15 +1,37 @@
-// index signatures
-class SeatAssignment {
-  // A1, A2, ...
-  // Morteza, Ali, ...
+// static members
+class Ride {
+  private static _activeRides: number = 0;
 
-  [seatNumber: string]: string;
+  start() {
+    Ride._activeRides++;
+  }
+
+  stop() {
+    Ride._activeRides--;
+  }
+
+  static get activeRides() {
+    return Ride._activeRides;
+  }
 }
 
-let seats = new SeatAssignment();
-seats.A1 = "Morteza";
-seats.A2 = "Ali";
-console.log(seats);
+let ride1 = new Ride();
+ride1.start();
+
+let ride2 = new Ride();
+ride2.start();
+
+console.log(Ride.activeRides);
+
+// index signatures
+// class SeatAssignment {
+//   [seatNumber: string]: string;
+// }
+
+// let seats = new SeatAssignment();
+// seats.A1 = "Morteza";
+// seats.A2 = "Ali";
+// console.log(seats);
 
 // creating classes
 // class Account {
