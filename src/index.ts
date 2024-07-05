@@ -1,8 +1,9 @@
 // creating classes
 class Account {
-  id: number;
+  readonly id: number;
   owner: string;
   balance: number;
+  nickname?: string;
 
   constructor(id: number, owner: string, balance: number) {
     this.id = id;
@@ -19,7 +20,7 @@ class Account {
 // creating objects
 let account = new Account(1, "Morteza", 0);
 account.despoit(100);
-console.log(account instanceof Account);
+console.log(account);
 
 // Exercises
 // let value: unknown = 'a';
