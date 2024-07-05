@@ -10,15 +10,17 @@ class Account {
             throw new Error("Invalid amount");
         this._balance += amount;
     }
-    getBalance() {
+    get balance() {
         return this._balance;
     }
-    calculateTax() {
-        return "calculate tax";
+    set balance(value) {
+        if (value < 0)
+            throw new Error("Invalid value");
+        this._balance = value;
     }
 }
 let account = new Account(1, "Morteza", 0);
 account.despoit(100);
-console.log(account.getBalance());
-console.log(account.calculateTax());
+account.balance = 1;
+console.log(account.balance);
 //# sourceMappingURL=index.js.map
