@@ -11,4 +11,7 @@ class Account {
         this.balance += amount;
     }
 }
+let account = new Account(1, "Morteza", 0);
+account.despoit(100);
+console.log(account instanceof Account);
 //# sourceMappingURL=index.js.map

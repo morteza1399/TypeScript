@@ -16,6 +16,11 @@ class Account {
   }
 }
 
+// creating objects
+let account = new Account(1, "Morteza", 0);
+account.despoit(100);
+console.log(account instanceof Account);
+
 // Exercises
 // let value: unknown = 'a';
 // if (typeof value === 'string')
