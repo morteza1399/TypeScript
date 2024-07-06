@@ -5,7 +5,8 @@ class Person {
     return this.firstName + " " + this.lastName;
   }
 
-  walk() {
+  protected walk() {
+    // test private and protected keyword
     console.log("walking");
   }
 }
@@ -16,6 +17,7 @@ class Student extends Person {
   }
 
   takeTest() {
+    this.walk();
     console.log("taking test");
   }
 }
@@ -41,6 +43,9 @@ printNames([
 function printNames(people: Person[]) {
   for (let person of people) console.log(person.fullName);
 }
+
+let student = new Student(1, "ali", "abdi");
+student.takeTest();
 
 // static members
 // class Ride {

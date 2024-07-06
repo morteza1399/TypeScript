@@ -17,6 +17,7 @@ class Student extends Person {
         this.studentId = studentId;
     }
     takeTest() {
+        this.walk();
         console.log("taking test");
     }
 }
@@ -39,4 +40,6 @@ function printNames(people) {
     for (let person of people)
         console.log(person.fullName);
 }
+let student = new Student(1, "ali", "abdi");
+student.takeTest();
 //# sourceMappingURL=index.js.map
