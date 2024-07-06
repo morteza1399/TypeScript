@@ -1,51 +1,72 @@
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+// abstract classes and methods
 
-  get fullName() {
-    return this.firstName + " " + this.lastName;
+abstract class Shape {
+  constructor(public color: string) {}
+
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
   }
 
-  protected walk() {
-    // test private and protected keyword
-    console.log("walking");
+  override render(): void {
+    console.log("Rendering a Circle");
   }
 }
 
-class Student extends Person {
-  constructor(public studentId: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
-  }
+let shape = new Shape("red");
+shape.render();
 
-  takeTest() {
-    this.walk();
-    console.log("taking test");
-  }
-}
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
 
-class Teacher extends Person {
-  override get fullName() {
-    return "Professor " + super.fullName;
-  }
-}
+//   get fullName() {
+//     return this.firstName + " " + this.lastName;
+//   }
 
-class Principal extends Person {
-  override get fullName() {
-    return "Principal " + super.fullName;
-  }
-}
+//   protected walk() {
+//     // test private and protected keyword
+//     console.log("walking");
+//   }
+// }
 
-printNames([
-  new Student(1, "John", "Smith"),
-  new Teacher("Mosh", "hamedani"),
-  new Principal("Mary", "Smith"),
-]);
+// class Student extends Person {
+//   constructor(public studentId: number, firstName: string, lastName: string) {
+//     super(firstName, lastName);
+//   }
 
-function printNames(people: Person[]) {
-  for (let person of people) console.log(person.fullName);
-}
+//   takeTest() {
+//     this.walk();
+//     console.log("taking test");
+//   }
+// }
 
-let student = new Student(1, "ali", "abdi");
-student.takeTest();
+// class Teacher extends Person {
+//   override get fullName() {
+//     return "Professor " + super.fullName;
+//   }
+// }
+
+// class Principal extends Person {
+//   override get fullName() {
+//     return "Principal " + super.fullName;
+//   }
+// }
+
+// printNames([
+//   new Student(1, "John", "Smith"),
+//   new Teacher("Mosh", "hamedani"),
+//   new Principal("Mary", "Smith"),
+// ]);
+
+// function printNames(people: Person[]) {
+//   for (let person of people) console.log(person.fullName);
+// }
+
+// let student = new Student(1, "ali", "abdi");
+// student.takeTest();
 
 // static members
 // class Ride {
