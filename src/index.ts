@@ -20,8 +20,14 @@ class Student extends Person {
   }
 }
 
-let student = new Student(1, "Morteza", "Abdollahi");
-student.walk();
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor " + super.fullName;
+  }
+}
+
+let teacher = new Teacher("John", "Smith");
+console.log(teacher.fullName);
 
 // static members
 // class Ride {
