@@ -6,6 +6,12 @@ class Person {
   }
 }
 
+class Employee extends Person {
+  constructor(public salary: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+}
+
 // class Logger {
 //   constructor(public logFile: string) {}
 
