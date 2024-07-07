@@ -1,23 +1,53 @@
+// interfaces
+
+// abstract class Calender {
+//   constructor(public name: string) {}
+
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+interface Calender {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
+}
+
+interface CloudCalender extends Calender {
+  sync(): void;
+}
+
+class GoogleCalender implements Calender {
+  constructor(public name: string) {}
+
+  addEvent(): void {
+    throw new Error("method not implemented");
+  }
+
+  removeEvent(): void {
+    throw new Error("method not implemented");
+  }
+}
+
 // abstract classes and methods
+// abstract class Shape {
+//   constructor(public color: string) {}
 
-abstract class Shape {
-  constructor(public color: string) {}
+//   abstract render(): void;
+// }
 
-  abstract render(): void;
-}
+// class Circle extends Shape {
+//   constructor(public radius: number, color: string) {
+//     super(color);
+//   }
 
-class Circle extends Shape {
-  constructor(public radius: number, color: string) {
-    super(color);
-  }
+//   override render(): void {
+//     console.log("Rendering a Circle");
+//   }
+// }
 
-  override render(): void {
-    console.log("Rendering a Circle");
-  }
-}
-
-let shape = new Shape("red");
-shape.render();
+// let shape = new Shape("red");
+// shape.render();
 
 // class Person {
 //   constructor(public firstName: string, public lastName: string) {}
