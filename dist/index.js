@@ -1,13 +1,11 @@
 "use strict";
-class GoogleCalender {
-    constructor(name) {
-        this.name = name;
-    }
-    addEvent() {
-        throw new Error("method not implemented");
-    }
-    removeEvent() {
-        throw new Error("method not implemented");
-    }
-}
+let employee = {
+    name: "John Smith",
+    salary: 50000,
+    address: {
+        street: "Flinders st",
+        city: "Melbourne",
+        zipCode: 3144,
+    },
+};
 //# sourceMappingURL=index.js.map

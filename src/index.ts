@@ -1,16 +1,38 @@
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+let employee: Employee = {
+  name: "John Smith",
+  salary: 50_000,
+  address: {
+    street: "Flinders st",
+    city: "Melbourne",
+    zipCode: 3144,
+  },
+};
 
-  get fullName() {
-    return this.firstName + " " + this.lastName;
-  }
+interface Address {
+  street: string;
+  city: string;
+  zipCode: number;
 }
 
-class Employee extends Person {
-  constructor(public salary: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
-  }
+interface Employee {
+  name: string;
+  salary: number;
+  address: Address;
 }
+
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
+
+//   get fullName() {
+//     return this.firstName + " " + this.lastName;
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(public salary: number, firstName: string, lastName: string) {
+//     super(firstName, lastName);
+//   }
+// }
 
 // class Logger {
 //   constructor(public logFile: string) {}
