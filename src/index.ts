@@ -1,10 +1,18 @@
-class Logger {
-  constructor(public logFile: string) {}
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
 
-  log(message: string) {
-    console.log(message);
+  get fullName() {
+    return this.firstName + " " + this.lastName;
   }
 }
+
+// class Logger {
+//   constructor(public logFile: string) {}
+
+//   log(message: string) {
+//     console.log(message);
+//   }
+// }
 
 // interfaces
 // abstract class Calender {
