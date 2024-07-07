@@ -1,5 +1,12 @@
-// interfaces
+class Logger {
+  constructor(public logFile: string) {}
 
+  log(message: string) {
+    console.log(message);
+  }
+}
+
+// interfaces
 // abstract class Calender {
 //   constructor(public name: string) {}
 
@@ -7,27 +14,27 @@
 //   abstract removeEvent(): void;
 // }
 
-interface Calender {
-  name: string;
-  addEvent(): void;
-  removeEvent(): void;
-}
+// interface Calender {
+//   name: string;
+//   addEvent(): void;
+//   removeEvent(): void;
+// }
 
-interface CloudCalender extends Calender {
-  sync(): void;
-}
+// interface CloudCalender extends Calender {
+//   sync(): void;
+// }
 
-class GoogleCalender implements Calender {
-  constructor(public name: string) {}
+// class GoogleCalender implements Calender {
+//   constructor(public name: string) {}
 
-  addEvent(): void {
-    throw new Error("method not implemented");
-  }
+//   addEvent(): void {
+//     throw new Error("method not implemented");
+//   }
 
-  removeEvent(): void {
-    throw new Error("method not implemented");
-  }
-}
+//   removeEvent(): void {
+//     throw new Error("method not implemented");
+//   }
+// }
 
 // abstract classes and methods
 // abstract class Shape {
