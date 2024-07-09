@@ -1,11 +1,23 @@
-// Generice classes
+// Generice function
 
-class KeyValuePiar<K, V> {
-  constructor(public key: K, public value: V) {}
+class ArrayUtils {
+  static wrapInArray<T>(value: T) {
+    return [value];
+  }
 }
 
-let pair = new KeyValuePiar<string, string>("1", "Apple");
-pair.key;
+let numbers = ArrayUtils.wrapInArray(56);
+console.log(numbers);
+
+// let numbers = wrapInArray(12);
+
+// Generice classes
+// class KeyValuePiar<K, V> {
+//   constructor(public key: K, public value: V) {}
+// }
+
+// let pair = new KeyValuePiar<string, string>("1", "Apple");
+// pair.key;
 
 // class KeyValuePiar {
 //   constructor(public key: number, public value: string) {}
