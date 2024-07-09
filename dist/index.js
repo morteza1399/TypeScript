@@ -1,11 +1,10 @@
 "use strict";
-let employee = {
-    name: "John Smith",
-    salary: 50000,
-    address: {
-        street: "Flinders st",
-        city: "Melbourne",
-        zipCode: 3144,
-    },
-};
+class KeyValuePiar {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+let pair = new KeyValuePiar(1, "Apple");
+console.log(pair);
 //# sourceMappingURL=index.js.map

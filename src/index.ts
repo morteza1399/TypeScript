@@ -1,24 +1,35 @@
-let employee: Employee = {
-  name: "John Smith",
-  salary: 50_000,
-  address: {
-    street: "Flinders st",
-    city: "Melbourne",
-    zipCode: 3144,
-  },
-};
-
-interface Address {
-  street: string;
-  city: string;
-  zipCode: number;
+class KeyValuePiar {
+  constructor(public key: number, public value: string) {}
 }
 
-interface Employee {
-  name: string;
-  salary: number;
-  address: Address;
+class StringKeyValuePiar {
+  constructor(public key: string, public value: string) {}
 }
+
+let pair = new StringKeyValuePiar("1", "Apple");
+pair.key
+
+// let employee: Employee = {
+//   name: "John Smith",
+//   salary: 50_000,
+//   address: {
+//     street: "Flinders st",
+//     city: "Melbourne",
+//     zipCode: 3144,
+//   },
+// };
+
+// interface Address {
+//   street: string;
+//   city: string;
+//   zipCode: number;
+// }
+
+// interface Employee {
+//   name: string;
+//   salary: number;
+//   address: Address;
+// }
 
 // class Person {
 //   constructor(public firstName: string, public lastName: string) {}
