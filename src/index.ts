@@ -1,13 +1,22 @@
-class KeyValuePiar {
-  constructor(public key: number, public value: string) {}
+// Generice classes
+
+class KeyValuePiar<K, V> {
+  constructor(public key: K, public value: V) {}
 }
 
-class StringKeyValuePiar {
-  constructor(public key: string, public value: string) {}
-}
+let pair = new KeyValuePiar<string, string>("1", "Apple");
+pair.key;
 
-let pair = new StringKeyValuePiar("1", "Apple");
-pair.key
+// class KeyValuePiar {
+//   constructor(public key: number, public value: string) {}
+// }
+
+// class StringKeyValuePiar {
+//   constructor(public key: string, public value: string) {}
+// }
+
+// let pair = new StringKeyValuePiar("1", "Apple");
+// pair.key
 
 // let employee: Employee = {
 //   name: "John Smith",
