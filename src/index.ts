@@ -1,16 +1,25 @@
+// exercieses
+
+function printName<T extends { name: string }>(obj: T) {
+  console.log(obj.name);
+}
+
+// function echo<T>(arg: T): T {
+//   return arg;
+// }
+
 // generice constraints (limitations)
+// class Person {
+//   constructor(public name: string) {}
+// }
 
-class Person {
-  constructor(public name: string) {}
-}
+// class Customer extends Person {}
 
-class Customer extends Person {}
+// function echo<T extends Person>(value: T): T {
+//   return value;
+// }
 
-function echo<T extends Person>(value: T): T {
-  return value;
-}
-
-echo(new Customer("morteza"));
+// echo(new Customer("morteza"));
 
 // generice interface
 // https://douran.com/users
