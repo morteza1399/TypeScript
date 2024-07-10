@@ -1,8 +1,16 @@
 // exercieses
 
-function printName<T extends { name: string }>(obj: T) {
-  console.log(obj.name);
+class Entity <T>{
+  constructor(public id: T) {}
 }
+
+let entity = new Entity(null);
+console.log(entity);
+
+
+// function printName<T extends { name: string }>(obj: T) {
+//   console.log(obj.name);
+// }
 
 // function echo<T>(arg: T): T {
 //   return arg;
