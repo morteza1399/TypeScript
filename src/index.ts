@@ -1,13 +1,38 @@
-// Generice function
+// generice interface
 
-class ArrayUtils {
-  static wrapInArray<T>(value: T) {
-    return [value];
-  }
+// https://douran.com/users
+// https://douran.com/products
+
+interface Result<T> {
+  data: T | null;
+  error: string | null;
 }
 
-let numbers = ArrayUtils.wrapInArray(56);
-console.log(numbers);
+function fetch<T>(url: string): Result<T> {
+  console.log(url);
+  return { data: null, error: null };
+}
+
+interface User {
+  username: string;
+}
+
+interface Product {
+  title: string;
+}
+
+let result = fetch<Product>("url");
+result.data
+
+// Generice f unction
+// class ArrayUtils {
+//   static wrapInArray<T>(value: T) {
+//     return [value];
+//   }
+// }
+
+// let numbers = ArrayUtils.wrapInArray(56);
+// console.log(numbers);
 
 // let numbers = wrapInArray(12);
 
