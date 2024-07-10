@@ -1,28 +1,40 @@
-// generice interface
+// generice constraints (limitations)
 
+class Person {
+  constructor(public name: string) {}
+}
+
+class Customer extends Person {}
+
+function echo<T extends Person>(value: T): T {
+  return value;
+}
+
+echo(new Customer("morteza"));
+
+// generice interface
 // https://douran.com/users
 // https://douran.com/products
+// interface Result<T> {
+//   data: T | null;
+//   error: string | null;
+// }
 
-interface Result<T> {
-  data: T | null;
-  error: string | null;
-}
+// function fetch<T>(url: string): Result<T> {
+//   console.log(url);
+//   return { data: null, error: null };
+// }
 
-function fetch<T>(url: string): Result<T> {
-  console.log(url);
-  return { data: null, error: null };
-}
+// interface User {
+//   username: string;
+// }
 
-interface User {
-  username: string;
-}
+// interface Product {
+//   title: string;
+// }
 
-interface Product {
-  title: string;
-}
-
-let result = fetch<Product>("url");
-result.data
+// let result = fetch<Product>("url");
+// result.data
 
 // Generice f unction
 // class ArrayUtils {
