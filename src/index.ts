@@ -2,35 +2,62 @@
 
 // create with index signature and keyof operator
 interface Product {
+  id: number;
   name: string;
   price: number;
 }
 
-type ReadOnly<T> = {
-  readonly [K in keyof T]: T[K];
+let productOmit: Omit<Product, "price"> = {
+  id: 5,
+  name: "ram",
 };
 
-type Optional<T> = {
-  [K in keyof T]?: T[K];
+let productPick: Pick<Product, "id" | "price"> = {
+  id: 3,
+  price: 4444,
 };
 
-type Nullable<T> = {
-  [K in keyof T]: T[K] | null;
+let productReadOnly: Readonly<Product> = {
+  id: 2,
+  name: "Flash",
+  price: 23000,
 };
 
-let product: ReadOnly<Product> = {
-  name: "a",
-  price: 1,
+let productRequired: Required<Product> = {
+  id: 1,
+  name: "hub",
+  price: 1000,
 };
 
-let productOptional: Optional<Product> = {
-  name: "b",
+let productOptional: Partial<Product> = {
+  id: 1,
 };
 
-let productNullable: Nullable<Product> = {
-  name: null,
-  price: 1,
-};
+// type ReadOnly<T> = {
+//   readonly [K in keyof T]: T[K];
+// };
+
+// type Optional<T> = {
+//   [K in keyof T]?: T[K];
+// };
+
+// type Nullable<T> = {
+//   [K in keyof T]: T[K] | null;
+// };
+
+// let product: ReadOnly<Product> = {
+//   name: "a",
+//   price: 1,
+// };
+
+// let productOptional: Optional<Product> = {
+//   name: "b",
+// };
+
+// let productNullable: Nullable<Product> = {
+//   name: null,
+//   price: 1,
+// };
 
 // The keyof operator
 // interface Product {
