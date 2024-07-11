@@ -1,37 +1,40 @@
+// decorators / what are decorators
+@component
+class ProfileComponent {}
+
 // Type mapping
-
 // create with index signature and keyof operator
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+// }
 
-let productOmit: Omit<Product, "price"> = {
-  id: 5,
-  name: "ram",
-};
+// let productOmit: Omit<Product, "price"> = {
+//   id: 5,
+//   name: "ram",
+// };
 
-let productPick: Pick<Product, "id" | "price"> = {
-  id: 3,
-  price: 4444,
-};
+// let productPick: Pick<Product, "id" | "price"> = {
+//   id: 3,
+//   price: 4444,
+// };
 
-let productReadOnly: Readonly<Product> = {
-  id: 2,
-  name: "Flash",
-  price: 23000,
-};
+// let productReadOnly: Readonly<Product> = {
+//   id: 2,
+//   name: "Flash",
+//   price: 23000,
+// };
 
-let productRequired: Required<Product> = {
-  id: 1,
-  name: "hub",
-  price: 1000,
-};
+// let productRequired: Required<Product> = {
+//   id: 1,
+//   name: "hub",
+//   price: 1000,
+// };
 
-let productOptional: Partial<Product> = {
-  id: 1,
-};
+// let productOptional: Partial<Product> = {
+//   id: 1,
+// };
 
 // type ReadOnly<T> = {
 //   readonly [K in keyof T]: T[K];
