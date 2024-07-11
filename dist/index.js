@@ -1,12 +1,14 @@
 "use strict";
-let month = {
-    key: "john",
-    value: 1,
-};
-let test = {
-    key: true,
-    value: "test",
-};
-console.log(month);
-console.log(test);
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class Customer extends Person {
+}
+function echo(value) {
+    return value;
+}
+let result = echo(new Customer("samira"));
+console.log(result);
 //# sourceMappingURL=index.js.map

@@ -1,22 +1,35 @@
 // exercieses
 
-interface Pair<K, V> {
-  key: K;
-  value: V;
+class Person {
+  constructor(public name: string) {}
 }
 
-let month: Pair<string, number> = {
-  key: "john",
-  value: 1,
-};
+class Customer extends Person {}
 
-let test: Pair<boolean, string> = {
-  key: true,
-  value: "test",
-};
+function echo<T extends Person>(value: T): T {
+  return value;
+}
 
-console.log(month);
-console.log(test);
+let result = echo(new Customer("samira"));
+console.log(result);
+
+// interface Pair<K, V> {
+//   key: K;
+//   value: V;
+// }
+
+// let month: Pair<string, number> = {
+//   key: "john",
+//   value: 1,
+// };
+
+// let test: Pair<boolean, string> = {
+//   key: true,
+//   value: "test",
+// };
+
+// console.log(month);
+// console.log(test);
 
 // class Entity <T>{
 //   constructor(public id: T) {}
