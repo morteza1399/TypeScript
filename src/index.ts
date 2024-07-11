@@ -1,29 +1,62 @@
-// The keyof operator
+// Type mapping
 
+// create with index signature and keyof operator
 interface Product {
   name: string;
   price: number;
 }
 
-class Store<T> {
-  protected _objects: T[] = [];
+type ReadOnly<T> = {
+  readonly [K in keyof T]: T[K];
+};
 
-  add(obj: T): void {
-    this._objects.push(obj);
-  }
+type Optional<T> = {
+  [K in keyof T]?: T[K];
+};
 
-  // T is Product
-  // keyof T is 'name' | 'price'
-  find(property: keyof T, value: unknown): T | undefined {
-    return this._objects.find((obj) => obj[property] === value);
-  }
-}
+type Nullable<T> = {
+  [K in keyof T]: T[K] | null;
+};
 
-let store = new Store<Product>();
-store.add({ name: "a", price: 1 });
-store.add({ name: "b", price: 2 });
-store.find("name", "a");
-console.log(store.find("price", 2));
+let product: ReadOnly<Product> = {
+  name: "a",
+  price: 1,
+};
+
+let productOptional: Optional<Product> = {
+  name: "b",
+};
+
+let productNullable: Nullable<Product> = {
+  name: null,
+  price: 1,
+};
+
+// The keyof operator
+// interface Product {
+//   name: string;
+//   price: number;
+// }
+
+// class Store<T> {
+//   protected _objects: T[] = [];
+
+//   add(obj: T): void {
+//     this._objects.push(obj);
+//   }
+
+//   // T is Product
+//   // keyof T is 'name' | 'price'
+//   find(property: keyof T, value: unknown): T | undefined {
+//     return this._objects.find((obj) => obj[property] === value);
+//   }
+// }
+
+// let store = new Store<Product>();
+// store.add({ name: "a", price: 1 });
+// store.add({ name: "b", price: 2 });
+// store.find("name", "a");
+// console.log(store.find("price", 2));
 
 // extends generic classes
 // interface Product {
