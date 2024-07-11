@@ -1,17 +1,50 @@
+// extends generic classes
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+class Store<T> {
+  protected _objects: T[] = [];
+
+  add(obj: T): void {
+    this._objects.push(obj);
+  }
+}
+
+class CompressStore<T> extends Store<T> {
+  compress() {}
+}
+
+class SearchableStore<T extends { name: string }> extends Store<T> {
+  find(name: string): T | undefined {
+    return this._objects.find((obj) => obj.name === name);
+  }
+}
+
+class ProductStore extends Store<Product> {
+  filterByCategory(category: string): Product[] {
+    console.log(category);
+
+    return [];
+  }
+}
+
+
 // exercieses
+// class Person {
+//   constructor(public name: string) {}
+// }
 
-class Person {
-  constructor(public name: string) {}
-}
+// class Customer extends Person {}
 
-class Customer extends Person {}
+// function echo<T extends Person>(value: T): T {
+//   return value;
+// }
 
-function echo<T extends Person>(value: T): T {
-  return value;
-}
-
-let result = echo(new Customer("samira"));
-console.log(result);
+// let result = echo(new Customer("samira"));
+// console.log(result);
 
 // interface Pair<K, V> {
 //   key: K;
