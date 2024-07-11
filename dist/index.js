@@ -1,9 +1,12 @@
 "use strict";
-class ArrayUtils {
-    static wrapInArray(value) {
-        return [value];
-    }
-}
-let numbers = ArrayUtils.wrapInArray(56);
-console.log(numbers);
+let month = {
+    key: "john",
+    value: 1,
+};
+let test = {
+    key: true,
+    value: "test",
+};
+console.log(month);
+console.log(test);
 //# sourceMappingURL=index.js.map

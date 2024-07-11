@@ -1,12 +1,29 @@
 // exercieses
 
-class Entity <T>{
-  constructor(public id: T) {}
+interface Pair<K, V> {
+  key: K;
+  value: V;
 }
 
-let entity = new Entity(null);
-console.log(entity);
+let month: Pair<string, number> = {
+  key: "john",
+  value: 1,
+};
 
+let test: Pair<boolean, string> = {
+  key: true,
+  value: "test",
+};
+
+console.log(month);
+console.log(test);
+
+// class Entity <T>{
+//   constructor(public id: T) {}
+// }
+
+// let entity = new Entity(null);
+// console.log(entity);
 
 // function printName<T extends { name: string }>(obj: T) {
 //   console.log(obj.name);
