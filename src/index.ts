@@ -1,4 +1,4 @@
-// extends generic classes
+// The keyof operator
 
 interface Product {
   name: string;
@@ -11,26 +11,51 @@ class Store<T> {
   add(obj: T): void {
     this._objects.push(obj);
   }
-}
 
-class CompressStore<T> extends Store<T> {
-  compress() {}
-}
-
-class SearchableStore<T extends { name: string }> extends Store<T> {
-  find(name: string): T | undefined {
-    return this._objects.find((obj) => obj.name === name);
+  // T is Product
+  // keyof T is 'name' | 'price'
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._objects.find((obj) => obj[property] === value);
   }
 }
 
-class ProductStore extends Store<Product> {
-  filterByCategory(category: string): Product[] {
-    console.log(category);
+let store = new Store<Product>();
+store.add({ name: "a", price: 1 });
+store.add({ name: "b", price: 2 });
+store.find("name", "a");
+console.log(store.find("price", 2));
 
-    return [];
-  }
-}
+// extends generic classes
+// interface Product {
+//   name: string;
+//   price: number;
+// }
 
+// class Store<T> {
+//   protected _objects: T[] = [];
+
+//   add(obj: T): void {
+//     this._objects.push(obj);
+//   }
+// }
+
+// class CompressStore<T> extends Store<T> {
+//   compress() {}
+// }
+
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//   find(name: string): T | undefined {
+//     return this._objects.find((obj) => obj.name === name);
+//   }
+// }
+
+// class ProductStore extends Store<Product> {
+//   filterByCategory(category: string): Product[] {
+//     console.log(category);
+
+//     return [];
+//   }
+// }
 
 // exercieses
 // class Person {
