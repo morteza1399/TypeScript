@@ -15,7 +15,13 @@ function Component(options: ComponentOptions) {
   };
 }
 
+function Pipe(constructor: Function) {
+  console.log("Pipe decorators called");
+  constructor.prototype.pipe = true;
+}
+
 @Component({ selector: "#my-profile" })
+@Pipe
 class ProfileComponent {}
 
 // Type mapping
