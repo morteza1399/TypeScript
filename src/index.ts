@@ -1,5 +1,13 @@
-// decorators / what are decorators
-@component
+// decorators / what are decorators / class decorators
+
+function Component(constructor: Function) {
+  console.log("component decorators called");
+  constructor.prototype.uniqueId = Date.now();
+  constructor.prototype.insertInDOM = () => {
+    console.log("insert the component in the DOM");
+  };
+}
+@Component
 class ProfileComponent {}
 
 // Type mapping
