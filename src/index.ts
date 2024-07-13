@@ -1,23 +1,48 @@
-// methood decorator
+// accessor decorator
 
-function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
-  const original = descriptor.value as Function;
-  descriptor.value = function (...args: any) {
-    console.log("Before");
-    original.call(this, ...args);
-    console.log("After");
+function Capitalize(
+  target: any,
+  methodName: string,
+  descriptor: PropertyDescriptor
+) {
+  const original = descriptor.get;
+  descriptor.get = function () {
+    const result = original?.call(this);
+    return typeof result === "string" ? result.toUpperCase() : result;
   };
 }
 
 class Person {
-  @Log
-  say(message: string) {
-    console.log(`Person say ${message}`);
+  constructor(public firstName: string, public lastName: string) {}
+
+  @Capitalize
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
-let person = new Person();
-person.say("Hello");
+let person = new Person("mosh", "hamedani");
+console.log(person.fullName);
+
+// methood decorator
+// function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+//   const original = descriptor.value as Function;
+//   descriptor.value = function (...args: any) {
+//     console.log("Before");
+//     original.call(this, ...args);
+//     console.log("After");
+//   };
+// }
+
+// class Person {
+//   @Log
+//   say(message: string) {
+//     console.log(`Person say ${message}`);
+//   }
+// }
+
+// let person = new Person();
+// person.say("Hello");
 
 // decorators / what are decorators / class decorators
 
