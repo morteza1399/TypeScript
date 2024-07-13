@@ -1,28 +1,49 @@
-// decorators / what are decorators / class decorators
+// methood decorator
 
-type ComponentOptions = {
-  selector: string;
-};
-
-function Component(options: ComponentOptions) {
-  return (constructor: Function) => {
-    console.log("component decorators called", options);
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.options = options;
-    constructor.prototype.insertInDOM = () => {
-      console.log("insert the component in the DOM");
-    };
+function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  const original = descriptor.value as Function;
+  descriptor.value = function (...args: any) {
+    console.log("Before");
+    original.call(this, ...args);
+    console.log("After");
   };
 }
 
-function Pipe(constructor: Function) {
-  console.log("Pipe decorators called");
-  constructor.prototype.pipe = true;
+class Person {
+  @Log
+  say(message: string) {
+    console.log(`Person say ${message}`);
+  }
 }
 
-@Component({ selector: "#my-profile" })
-@Pipe
-class ProfileComponent {}
+let person = new Person();
+person.say("Hello");
+
+// decorators / what are decorators / class decorators
+
+// type ComponentOptions = {
+//   selector: string;
+// };
+
+// function Component(options: ComponentOptions) {
+//   return (constructor: Function) => {
+//     console.log("component decorators called", options);
+//     constructor.prototype.uniqueId = Date.now();
+//     constructor.prototype.options = options;
+//     constructor.prototype.insertInDOM = () => {
+//       console.log("insert the component in the DOM");
+//     };
+//   };
+// }
+
+// function Pipe(constructor: Function) {
+//   console.log("Pipe decorators called");
+//   constructor.prototype.pipe = true;
+// }
+
+// @Component({ selector: "#my-profile" })
+// @Pipe
+// class ProfileComponent {}
 
 // Type mapping
 // create with index signature and keyof operator
