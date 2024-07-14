@@ -1,35 +1,52 @@
+// parameter decorator
+
+type WatchedParameter = {
+  methodName: string;
+  parameterIndex: number;
+};
+
+const WatchedParameters: WatchedParameter[] = [];
+
+function Watch(target: any, methodName: string, parameterIndex: number) {
+  WatchedParameters.push({ methodName, parameterIndex });
+}
+class vehicle {
+  move(@Watch speed: number) {}
+}
+
+console.log(WatchedParameters);
+
 // property decorator
+// function MinLength(length: number) {
+//   return (target: any, propertyName: string) => {
+//     let value: string;
+//     const descriptor: PropertyDescriptor = {
+//       get() {
+//         return value;
+//       },
+//       set(newValue) {
+//         if (newValue.length < length)
+//           throw new Error(
+//             `${propertyName} should be at ${length} character long`
+//           );
+//         value = newValue;
+//       },
+//     };
+//     Object.defineProperty(target, propertyName, descriptor);
+//   };
+// }
 
-function MinLength(length: number) {
-  return (target: any, propertyName: string) => {
-    let value: string;
-    const descriptor: PropertyDescriptor = {
-      get() {
-        return value;
-      },
-      set(newValue) {
-        if (newValue.length < length)
-          throw new Error(
-            `${propertyName} should be at ${length} character long`
-          );
-        value = newValue;
-      },
-    };
-    Object.defineProperty(target, propertyName, descriptor);
-  };
-}
+// class User {
+//   @MinLength(4)
+//   password: string;
 
-class User {
-  @MinLength(4)
-  password: string;
+//   constructor(password: string) {
+//     this.password = password;
+//   }
+// }
 
-  constructor(password: string) {
-    this.password = password;
-  }
-}
-
-let user = new User("1234");
-console.log(user.password);
+// let user = new User("1234");
+// console.log(user.password);
 
 // accessor decorator
 // function Capitalize(
