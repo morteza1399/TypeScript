@@ -1,11 +1,16 @@
+import { calculateTax } from "./tax";
+
+let tax = calculateTax(1000);
+console.log(tax);
+
 // re-exporting
-import { Circle, Square } from "./shapes";
+// import { Circle, Square } from "./shapes";
 
-let circle = new Circle(99);
-console.log(circle);
+// let circle = new Circle(99);
+// console.log(circle);
 
-let square = new Square(30);
-console.log(square);
+// let square = new Square(30);
+// console.log(square);
 
 // wildcard import
 // import * as Shapes from "./shapes";

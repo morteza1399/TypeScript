@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const shapes_1 = require("./shapes");
-let circle = new shapes_1.Circle(99);
-console.log(circle);
-let square = new shapes_1.Square(30);
-console.log(square);
+const tax_1 = require("./tax");
+let tax = (0, tax_1.calculateTax)(1000);
+console.log(tax);
 //# sourceMappingURL=index.js.map
