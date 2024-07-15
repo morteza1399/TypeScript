@@ -1,20 +1,29 @@
+// Exercises for decorator
+
+function Sauce(sauce: string) {
+  return (constructor: Function) => {
+    constructor.prototype.sauce = sauce;
+  };
+}
+@Sauce("pesto")
+class Pizza {}
+
 // parameter decorator
+// type WatchedParameter = {
+//   methodName: string;
+//   parameterIndex: number;
+// };
 
-type WatchedParameter = {
-  methodName: string;
-  parameterIndex: number;
-};
+// const WatchedParameters: WatchedParameter[] = [];
 
-const WatchedParameters: WatchedParameter[] = [];
+// function Watch(target: any, methodName: string, parameterIndex: number) {
+//   WatchedParameters.push({ methodName, parameterIndex });
+// }
+// class vehicle {
+//   move(@Watch speed: number) {}
+// }
 
-function Watch(target: any, methodName: string, parameterIndex: number) {
-  WatchedParameters.push({ methodName, parameterIndex });
-}
-class vehicle {
-  move(@Watch speed: number) {}
-}
-
-console.log(WatchedParameters);
+// console.log(WatchedParameters);
 
 // property decorator
 // function MinLength(length: number) {
