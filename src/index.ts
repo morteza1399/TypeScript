@@ -1,12 +1,17 @@
-// Exercises for decorator
+// module exporting and importing
+import { Circle } from "./shapes";
 
-function Sauce(sauce: string) {
-  return (constructor: Function) => {
-    constructor.prototype.sauce = sauce;
-  };
-}
-@Sauce("pesto")
-class Pizza {}
+let circle = new Circle(1);
+console.log(circle.radius);
+
+// Exercises for decorator
+// function Sauce(sauce: string) {
+//   return (constructor: Function) => {
+//     constructor.prototype.sauce = sauce;
+//   };
+// }
+// @Sauce("pesto")
+// class Pizza {}
 
 // parameter decorator
 // type WatchedParameter = {
