@@ -1,9 +1,16 @@
-// default export
-import Store, { Format } from "./storage";
+// wildcard import
 
-let store = new Store();
-console.log(store);
-console.log(Format);
+import * as Shapes from "./shapes";
+
+let circle = new Shapes.Circle(10);
+console.log(circle.radius);
+
+// default export
+// import Store, { Format } from "./storage";
+
+// let store = new Store();
+// console.log(store);
+// console.log(Format);
 
 // module exporting and importing
 // import { Circle } from "./shapes";

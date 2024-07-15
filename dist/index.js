@@ -23,8 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const storage_1 = __importStar(require("./storage"));
-let store = new storage_1.default();
-console.log(store);
-console.log(storage_1.Format);
+const Shapes = __importStar(require("./shapes"));
+let circle = new Shapes.Circle(10);
+console.log(circle.radius);
 //# sourceMappingURL=index.js.map
