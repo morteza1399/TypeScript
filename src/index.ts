@@ -1,9 +1,17 @@
+// re-exporting
+import { Circle, Square } from "./shapes";
+
+let circle = new Circle(99);
+console.log(circle);
+
+let square = new Square(30);
+console.log(square);
+
 // wildcard import
+// import * as Shapes from "./shapes";
 
-import * as Shapes from "./shapes";
-
-let circle = new Shapes.Circle(10);
-console.log(circle.radius);
+// let circle = new Circle.Circle(10);
+// console.log(circle.radius);
 
 // default export
 // import Store, { Format } from "./storage";
