@@ -1,8 +1,15 @@
-// module exporting and importing
-import { Circle } from "./shapes";
+// default export
+import Store, { Format } from "./storage";
 
-let circle = new Circle(1);
-console.log(circle.radius);
+let store = new Store();
+console.log(store);
+console.log(Format);
+
+// module exporting and importing
+// import { Circle } from "./shapes";
+
+// let circle = new Circle(1);
+// console.log(circle.radius);
 
 // Exercises for decorator
 // function Sauce(sauce: string) {
