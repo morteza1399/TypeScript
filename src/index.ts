@@ -1,6 +1,6 @@
-import { calculateTax } from "./tax";
+import { calculateTax, sayHello } from "./tax";
 
-let tax = calculateTax(10_000);
+let tax = calculateTax();
 console.log(tax);
 
 // re-exporting
