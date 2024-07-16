@@ -1,7 +1,7 @@
-import { calculateTax, sayHello } from "./tax";
+// using definitely typed declaration files
+import * as _ from "lodash";
 
-let tax = calculateTax();
-console.log(tax);
+_.clone([1, 2, 3]);
 
 // re-exporting
 // import { Circle, Square } from "./shapes";
